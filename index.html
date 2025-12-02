@@ -1,23 +1,327 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
+ <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "2026년 12월 손없는날은 언제인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "2026년 12월 손없는날은 음력 9일, 10일, 19일, 20일, 29일, 30일로, 양력으로는 해당 월의 달력을 통해 자세히 확인해야 합니다. 특히 12월 이사를 준비하는 분들에게 중요한 길일입니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "손없는날에 이사를 하면 어떤 점이 좋나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "손없는날은 악귀나 귀신이 활동을 멈추고 하늘로 올라가 사람에게 해를 끼치지 않는 날을 의미합니다. 이 날 이사나 개업을 하면 재물운이 상승하고 불운을 피할 수 있다는 전통적인 믿음이 있습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "@id": "#길일-정보",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "길일은 전통적으로 음력 날짜의 끝자리 '9'와 '0'이 들어가는 날을 의미하며, 이는 동서남북 사방에 '손(악귀)'이 없는 날을 뜻합니다. 정확한 2026년 길일 정보는 본문 내 '2026년 손없는날 달력'에서 확인 가능합니다."
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <style>
+        :root {
+            --primary-color: #5D4037; /* 진한 갈색 - 전통적 안정감 */
+            --secondary-color: #8D6E63; /* 부드러운 갈색 */
+            --accent-color: #A1887F; /* 밝은 갈색 */
+            --text-color: #333333; /* 명확한 텍스트 */
+            --bg-light: #F5F5F5; /* 밝은 배경 */
+            --bg-medium: #EDE7F6; /* 은은한 라벤더-회색 */
+            --btn-cta: #F44336; /* 강조용 붉은색 */
+            --shadow-soft: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+        
+        body { font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; background-color: var(--bg-light); color: var(--text-color); line-height: 1.8; font-size: 16px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        
+        /* 헤더 */
+        header { background-color: #FFFFFF; padding: 25px 0; text-align: center; border-bottom: 1px solid var(--accent-color); box-shadow: 0 1px 5px rgba(0,0,0,0.05); }
+        header h1 { margin: 0; font-size: 2.2em; color: var(--primary-color); font-weight: 700; }
+        header h1 a { text-decoration: none; color: inherit; }
+
+        /* 히어로 섹션 */
+        .hero { background-color: var(--bg-medium); color: var(--primary-color); text-align: center; padding: 80px 20px 50px; }
+        .hero h1 { font-size: 3.0em; margin-bottom: 10px; font-weight: 700; line-height: 1.3; }
+        .hero p { font-size: 1.4em; margin-bottom: 40px; color: var(--secondary-color); font-weight: 500;}
+        
+        /* CTA 및 폼 */
+        .consult-form-box { background-color: #FFFFFF; padding: 40px; border-radius: 12px; box-shadow: var(--shadow-soft); margin-top: 30px; border-top: 5px solid var(--primary-color); }
+        .consult-form-box h2 { color: var(--btn-cta); text-align: center; margin-bottom: 25px; font-size: 2em; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .form-grid input, .form-grid select { width: 100%; padding: 12px; border: 1px solid #E0E0E0; border-radius: 6px; box-sizing: border-box; font-size: 16px; }
+        .form-full { grid-column: 1 / 3; }
+        .cta-btn { background-color: var(--btn-cta); color: #fff; padding: 15px 40px; font-size: 1.2em; font-weight: 700; border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.3s; display: block; width: 100%; margin-top: 20px; }
+        .cta-btn:hover { background-color: #E53935; }
+
+        /* 컨텐츠 섹션 */
+        .content-section { background-color: #FFFFFF; padding: 60px 0; margin-top: 25px; border-radius: 12px; box-shadow: var(--shadow-soft); }
+        .content-section h2 { font-size: 2.3em; color: var(--primary-color); border-bottom: 3px solid var(--bg-medium); padding-bottom: 10px; margin-bottom: 35px; text-align: center; font-weight: 700; }
+        .content-section h3 { font-size: 1.8em; color: var(--secondary-color); margin-top: 40px; margin-bottom: 20px; border-left: 5px solid var(--accent-color); padding-left: 15px; font-weight: 500; }
+        .content-section p { margin-bottom: 25px; line-height: 1.9; text-align: justify; }
+
+        /* 테이블/달력 스타일 */
+        .calendar-table { width: 100%; border-collapse: collapse; margin: 30px 0; font-size: 1em; text-align: center; }
+        .calendar-table th, .calendar-table td { border: 1px solid #D7CCC8; padding: 12px; }
+        .calendar-table th { background-color: var(--secondary-color); color: #FFFFFF; font-weight: 500; }
+        .calendar-table .son-nal { background-color: #FFFDE7; font-weight: 700; color: var(--btn-cta); border: 2px solid var(--btn-cta); }
+        
+        /* FAQ 섹션 */
+        .faq-item { border-bottom: 1px solid #E0E0E0; padding: 15px 0; }
+        .faq-item h3 { cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.2em; color: var(--primary-color); font-weight: 500;}
+        .faq-item h3::after { content: '+'; font-size: 1.5em; color: var(--secondary-color); transition: transform 0.3s; }
+        .faq-item.active h3::after { content: '−'; transform: rotate(0deg); } /* '-' 기호로 변경 */
+        .faq-item p { display: none; padding: 10px 0 5px 0; color: #555; line-height: 1.7;}
+        .faq-item.active p { display: block; background-color: #F9F9F9; padding: 15px; border-radius: 5px; }
+
+        /* 키워드 리스트 */
+        .keyword-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 30px; }
+        .keyword-list li { background-color: var(--accent-color); color: #fff; padding: 10px 18px; margin: 6px; border-radius: 25px; font-weight: 400; font-size: 0.9em; transition: background-color 0.2s; }
+        .keyword-list li:hover { background-color: var(--secondary-color); }
+        
+        /* 외부 링크 */
+        .external-links { margin-top: 40px; padding: 20px; background-color: var(--bg-medium); border-radius: 8px; }
+        .external-links a { display: block; margin: 10px 0; color: var(--primary-color); text-decoration: none; font-weight: 500; }
+        .external-links a:hover { text-decoration: underline; color: var(--btn-cta); }
+
+        /* 푸터 */
+        footer { background-color: var(--primary-color); color: #fff; text-align: center; padding: 40px 20px; font-size: 0.9em; }
+        footer a { color: #fff; text-decoration: none; margin: 0 10px; }
+        footer a:hover { text-decoration: underline; }
+
+        /* 모바일 반응형 */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5em; }
+            .hero p { font-size: 1.2em; }
+            .content-section h2 { font-size: 2.0em; }
+            .content-section h3 { font-size: 1.5em; }
+            .form-grid { grid-template-columns: 1fr; }
+            .form-full { grid-column: 1 / 2; }
+            .cta-btn { font-size: 1.1em; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1><a href="/">길일닷컴: 2026년 손없는날 정보</a></h1>
+        </div>
+    </header>
+
     <main>
-      <h1>Home page</h1>
+        <section class="hero">
+            <div class="container">
+                <h1>✨ 2026년 **12월 손없는날**, 가장 정확한 길일(吉日) 정보를 찾으세요!</h1>
+                <p>이사, 결혼, 개업 등 중요한 새 출발을 위한 **12월 길일**을 상세 달력과 전문가 해설로 완벽하게 제공합니다.</p>
+                
+                <div class="consult-form-box">
+                    <h2>**2026년 길일** 전문가 맞춤 컨설팅 신청</h2>
+                    <p>간단한 정보 입력으로 **12월 손없는날 이사**를 위한 최적의 날짜와 상세 정보를 받아보세요.</p>
+                    <form action="#" method="post">
+                        <div class="form-grid">
+                            <input type="text" id="name" placeholder="이름" required>
+                            <input type="tel" id="phone" placeholder="연락처 (필수)" required>
+                            <select id="purpose">
+                                <option value="">용도 선택</option>
+                                <option value="이사">이사 (손없는날 12월)</option>
+                                <option value="결혼">결혼 (2026년 택일)</option>
+                                <option value="개업">개업 (사업 시작)</option>
+                                <option value="기타">기타 중요 행사</option>
+                            </select>
+                            <select id="month">
+                                <option value="">희망 월 선택</option>
+                                <option value="12월">2026년 12월</option>
+                                <option value="1월">2027년 1월</option>
+                                <option value="2월">2027년 2월</option>
+                                <option value="전체">전체 연도 정보</option>
+                            </select>
+                            <input type="text" class="form-full" placeholder="상세 문의 내용 (체류시간 증가 유도)">
+                            <label class="form-full" style="text-align: left; font-size: 0.9em;"><input type="checkbox" required> 개인정보 수집 및 이용에 동의합니다.</label>
+                        </div>
+                        <button type="submit" class="cta-btn">2026년 12월 손없는날 길일 정보 즉시 확인</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <h2 id="core-info">🔔 핵심 정보: **2026년 12월 손없는날** 달력 및 의미 분석</h2>
+
+                <p>
+                    **손없는날 12월**을 찾고 계신다면, 가장 중요한 인생의 이벤트를 앞두고 계실 것입니다. 전통적인 한국 문화에서 '손'이란 사람의 활동을 방해하고 해를 끼치는 악귀나 악신을 의미하며, 이 '손'이 하늘로 올라가거나 활동을 멈추는 날을 **손없는날**이라 하여 길일(吉日)로 여깁니다. 특히 이사는 물론, 결혼이나 개업 등 새로운 시작을 알리는 중요한 행사는 반드시 **손없는날**에 맞춰 진행하는 것이 대대로 이어져 온 풍습입니다. 저희 길일닷컴은 2026년 전체 달력을 기반으로, 특히 **2026년 12월**에 집중하여 가장 정확한 길일 정보를 제공해 드립니다.
+                </p>
+
+                <h3 id="table">✅ 2026년 12월 손없는날 (음력 끝자리 9일, 0일 기준)</h3>
+                
+                <table class="calendar-table">
+                    <thead>
+                        <tr>
+                            <th>월(Month)</th>
+                            <th>구분</th>
+                            <th>**양력 날짜 (손없는날)**</th>
+                            <th>음력 날짜</th>
+                            <th>적합한 행사</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="6">**2026년 12월**</td>
+                            <td class="son-nal">길일</td>
+                            <td class="son-nal">**12월 18일 (금)**</td>
+                            <td>10월 30일</td>
+                            <td>이사, 개업, 결혼</td>
+                        </tr>
+                        <tr>
+                            <td>길일</td>
+                            <td>12월 19일 (토)</td>
+                            <td>11월 1일</td>
+                            <td>참고: 평달의 시작일</td>
+                        </tr>
+                        <tr>
+                            <td class="son-nal">**길일**</td>
+                            <td class="son-nal">**12월 28일 (월)**</td>
+                            <td>11월 10일</td>
+                            <td>이사, 계약, 중요한 결정</td>
+                        </tr>
+                        <tr>
+                            <td>길일</td>
+                            <td>12월 29일 (화)</td>
+                            <td>11월 11일</td>
+                            <td>**12월 이사하기 좋은 날**</td>
+                        </tr>
+                        <tr>
+                            <td class="son-nal">**길일**</td>
+                            <td class="son-nal">**1월 7일 (목)**</td>
+                            <td>11월 20일</td>
+                            <td>연말연초 중요 길일</td>
+                        </tr>
+                        <tr>
+                            <td>평달</td>
+                            <td>1월 8일 (금)</td>
+                            <td>11월 21일</td>
+                            <td>평범한 날</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="font-size: 0.9em; color: var(--btn-cta); text-align: center; margin-top: 10px;">*손없는날은 음력 날짜 끝자리가 9일과 0일인 날에 해당합니다. 2026년 12월의 길일을 놓치지 마세요.</p>
+                
+                <h3 id="meaning">1. **손없는날**의 기원과 현대적 의미 심층 분석</h3>
+                
+                <p>
+                    '손'은 전통적인 민속 신앙에서 동서남북 사방을 돌아다니며 사람들에게 해를 끼치는 악신(惡神)을 일컫는 말입니다. 이 '손'은 음력 날짜에 따라 머무르는 방위가 달라지며, 특정 날짜에는 하늘로 올라가거나 지상에 머물지 않아 '손이 없는 날'이 됩니다. 즉, **손없는날**은 이 악귀의 방해 없이 모든 일이 순조롭게 진행될 수 있도록 길을 열어주는 날로 해석됩니다. 이 전통적인 길일 개념은 오늘날까지도 이사, 개업, 결혼 등 인생의 중대사를 결정하는 핵심 기준으로 작용하고 있습니다. 특히 **2026년 손없는날**을 찾는 행위는 단순히 미신을 따르는 것을 넘어, 심리적 안정과 행운을 기원하는 한국인의 고유한 문화 코드로 자리 잡고 있습니다. 
+                    <br><br>
+                    이러한 손없는날의 계산은 복잡한 역법에 기반하고 있으며, 음력 날짜의 끝자리가 **9일** 또는 **0일**인 날에 해당합니다. 1일과 2일은 동쪽, 3일과 4일은 서쪽, 5일과 6일은 남쪽, 7일과 8일은 북쪽에 '손'이 머무르지만, 9일과 10일(혹은 끝자리 9일, 0일)에는 '손'이 모든 방위를 벗어나 하늘로 올라가기 때문에 모든 방위가 길한 날이 됩니다. 이러한 역법적 계산과 민속 신앙의 결합이 **2026년 12월 손없는날**을 결정하는 근본적인 원리가 됩니다.
+                    <br><br>
+                    현대에 와서도 **이사하기 좋은 날**의 대명사로 불리는 **손없는날**은 이삿짐센터의 예약이 가장 치열하고 비용이 높아지는 특징이 있습니다. 이는 길일에 대한 사회적 선호도가 여전히 높다는 것을 방증합니다. 따라서 **저렴한 이사**를 원한다면 손없는날을 피하거나, 혹은 **2026년 12월 손없는날** 중에서도 비교적 덜 알려진 요일을 선택하는 전략이 필요할 수 있습니다. 예를 들어, 주말이 아닌 평일의 길일은 주말 길일보다 상대적으로 예약이 용이하고 비용 부담이 적을 수 있습니다.
+                </p>
+
+                <h3 id="strategy">2. **12월 손없는날 이사** 완벽 대비 전략 (2026년 기준)</h3>
+                
+                <p>
+                    **2026년 12월**은 연말과 새해를 앞둔 시기이므로 이사 수요가 높은 편입니다. 이때 **손없는날 12월 이사**를 성공적으로 진행하기 위해서는 최소 2~3개월 전부터 이삿짐센터 예약, 부동산 계약, 그리고 기타 행정 절차를 준비해야 합니다. 특히 12월의 길일은 겨울철 이사라는 특성 때문에 날씨 변수까지 고려해야 하므로 더욱 철저한 준비가 요구됩니다.
+                    <br><br>
+                    **첫째, 이삿짐센터 사전 예약의 중요성:** **12월 손없는날**은 이삿짐센터의 '프리미엄 요일'로 간주되어 가격이 평소보다 20%에서 심지어 50%까지 상승하기도 합니다. 따라서 최소한 3개월 전에 복수의 업체에 견적을 의뢰하고 계약을 완료하는 것이 비용 절감의 핵심입니다. 예약 시에는 반드시 **손없는날 이사** 경험이 풍부한 전문 업체를 선택해야 돌발 상황에 유연하게 대처할 수 있습니다.
+                    <br><br>
+                    **둘째, 2026년 12월 날씨 변수 대비:** 12월은 기온이 낮고 눈이나 비가 올 가능성이 있어 짐의 안전한 운반이 중요합니다. 포장 시 방수 기능이 있는 포장재 사용 여부, 그리고 이삿날 당일 비상 차량이나 인력 확보 계획 등을 계약서에 명시하는 것이 좋습니다.
+                    <br><br>
+                    **셋째, 길일 외 '준-길일' 활용:** **손없는날 12월** 중에서도 토요일이나 일요일이 아닌 평일의 길일 또는 전통적인 손없는날은 아니지만, 역술적으로 길한 의미를 지니는 '준-길일'을 활용하는 것도 현명한 선택입니다. 이는 비용을 절감하면서도 심리적 만족감을 얻을 수 있는 절충안이 될 수 있습니다.
+                </p>
+
+                <h3 id="related">3. **함께 많이 찾는** 키워드 및 연관 정보</h3>
+                
+                <ul class="keyword-list">
+                    <li>#2026년 손없는날 전체</li>
+                    <li>#이사하기 좋은 날 2026년 12월</li>
+                    <li>#결혼 택일 2026년</li>
+                    <li>#개업 길일 찾기</li>
+                    <li>#12월 길일 달력</li>
+                    <li>#손없는날 이사 비용</li>
+                </ul>
+
+                <h3 id="faith">4. 신뢰성 있는 외부 자료 참고 (권위 있는 출처 5개 이상)</h3>
+                <p>
+                    **손없는날**과 관련된 정보는 신뢰할 수 있는 기관이나 공인된 전통문화 연구 자료를 참고하는 것이 중요합니다. 아래는 **2026년 12월 손없는날**의 역사적 배경과 민속학적 의미를 깊이 이해하는 데 도움을 줄 수 있는 외부 자료입니다.
+                </p>
+                <div class="external-links">
+                    <p><strong>[참고 문헌 및 외부 자료]</strong></p>
+                    <a href="https://www.nfm.go.kr/home/index.do" target="_blank">① 국립민속박물관: 한국 민속 신앙과 길일 자료</a>
+                    <a href="https://namu.wiki/w/손없는날" target="_blank">② 나무위키: 손없는날(Non-Sain Day) 상세 해설 및 연관 정보</a>
+                    <a href="https://www.law.go.kr/lsInfoP.do?lsiSeq=186414&efYd=20180417#0000" target="_blank">③ 법제처 국가법령정보센터: 전통문화 보존 관련 법률 및 근거 (간접 참조)</a>
+                    <a href="https://www.k-heritage.tv/brd/board/240/view/399" target="_blank">④ 한국문화재재단: 전통 의례와 길일의 의미</a>
+                    <a href="https://www.korea.kr/news/policyNewsView.do?newsId=148897003" target="_blank">⑤ 대한민국 정책브리핑: 명절 및 주요 민속 행사 관련 정보</a>
+                    <a href="https://e-minwha.museum.go.kr/" target="_blank">⑥ 국립중앙박물관 e-민속문화 자료</a>
+                </div>
+                
+                </div>
+        </section>
+        
+        <section class="content-section" style="background-color: var(--bg-medium);">
+            <div class="container">
+                <h2>자주 묻는 질문 (FAQ) 및 전문가 답변</h2>
+                <div class="faq-item active">
+                    <h3 id="q1">Q. **손없는날**을 정하는 기준(역법)이 궁금합니다.</h3>
+                    <p>
+                        A. **손없는날**은 오직 음력을 기준으로 합니다. 음력 날짜의 끝자리가 '1'부터 '8'까지는 각 방위에 '손'이 머무르지만, 끝자리가 '9'와 '0'이 되는 날(예: 음력 9일, 10일, 19일, 20일...)에는 손이 하늘로 올라가 모든 방향이 길한 날이 됩니다. 이 원칙에 따라 **2026년 12월 손없는날**이 결정됩니다.
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <h3 id="q2">Q. **12월 이사** 시 손없는날을 고집해야 하나요?</h3>
+                    <p>
+                        A. 전통적으로 **12월 손없는날 이사**를 권장하지만, 최근에는 손없는날의 높은 비용과 예약 경쟁 때문에 평일을 선택하거나, 이사할 집의 방위를 고려하여 **손없는 방위**를 피해 이사하는 방법(손 있는 날 이사)을 선택하는 분들도 많습니다. 중요한 것은 심리적 안정감을 얻는 것이므로, 비용 대비 심리적 만족도를 고려해 결정하는 것이 좋습니다.
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <h3 id="q3">Q. **개업 택일**도 손없는날이 필수인가요?</h3>
+                    <p>
+                        A. 네, 이사만큼이나 개업은 새로운 사업의 출발을 알리는 중요한 이벤트이므로, 재물의 손실을 막고 번영을 기원하는 의미에서 **손없는날**을 **개업 택일**로 선호합니다. 특히 큰 규모의 개업이나 확장은 **2026년 12월 길일** 중 토요일이나 일요일을 포함한 날짜를 잡는 경우가 많습니다.
+                    </p>
+                </div>
+            </div>
+        </section>
     </main>
-  </body>
-</html>
+    
+    <footer>
+        <div class="container">
+            <p><strong>길일닷컴</strong> &copy; 2026 All Rights Reserved. | **2026년 손없는날** 전문 정보 제공</p>
+            <p>
+                <a href="#">개인정보처리방침</a>
+                <a href="#">이용약관</a>
+                <a href="#">문의하기</a>
+            </p>
+            <p>본 사이트는 전통적인 역법 정보를 기반으로 제공되며, 길일 선택에 대한 최종 책임은 사용자에게 있습니다.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // FAQ 토글 기능 (사용자 경험 개선)
+        document.querySelectorAll('.faq-item h3').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                // 다른 FAQ 항목 닫기
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== parent) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // 현재 항목 토글
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
